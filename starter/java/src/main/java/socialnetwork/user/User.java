@@ -1,5 +1,6 @@
 package socialnetwork.user;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ public class User {
 
   private Map<Date, String> messages = new HashMap<>();
 
-  private List timeLine;
+  private List<String> timeLine;
 
   public User(String nameIn){
     this.name = nameIn;
@@ -29,6 +30,11 @@ public class User {
   public boolean publish(String message){
     messages.put(Calendar.getInstance().getTime(), message);
     return true;
+  }
+
+  public List<String> refreshTimeLine(){
+    this.timeLine = new ArrayList<>();
+    return this.timeLine;
   }
 
 }

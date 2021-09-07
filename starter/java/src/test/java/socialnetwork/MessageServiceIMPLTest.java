@@ -29,4 +29,13 @@ class MessageServiceIMPLTest {
     Assertions.assertNotNull(alice.getMessages());
   }
 
+  @Test
+  public void testUserSeesTimeline_givenNotNull(){
+    alice.publish("I love the weather today.");
+    alice.refreshTimeLine();
+    Assertions.assertNotNull(alice.getTimeLine());
+  }
+
+
+
 }
