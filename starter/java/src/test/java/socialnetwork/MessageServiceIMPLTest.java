@@ -19,8 +19,14 @@ class MessageServiceIMPLTest {
 
 
   @Test
-  public void testThatAliceExists(){
+  public void testThatUserExists(){
     Assertions.assertNotNull(alice);
+  }
+
+  @Test
+  public void testUsertalks_givenNotNull(){
+    alice.publish("I love the weather today.");
+    Assertions.assertNotNull(alice.getMessages());
   }
 
 }
