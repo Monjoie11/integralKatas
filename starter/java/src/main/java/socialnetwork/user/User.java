@@ -33,7 +33,7 @@ public class User {
   }
 
   public List<String> refreshTimeLine(){
-    this.timeLine = new ArrayList<>();
+    this.timeLine = new ArrayList<String>(messages.values());
     return this.timeLine;
   }
 

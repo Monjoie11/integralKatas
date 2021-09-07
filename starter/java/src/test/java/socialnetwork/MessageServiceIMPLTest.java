@@ -36,6 +36,15 @@ class MessageServiceIMPLTest {
     Assertions.assertNotNull(alice.getTimeLine());
   }
 
+  @Test
+  public void testUserSeesLastPost_givenNotNull(){
+    alice.publish("I love the weather today.");
+    alice.refreshTimeLine();
+    Assertions.assertEquals("I love the weather today.", alice.getTimeLine().get(0));
+  }
+
+
+
 
 
 }
